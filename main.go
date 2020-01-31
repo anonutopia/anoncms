@@ -6,10 +6,15 @@ import (
 
 var m *macaron.Macaron
 
+var conf *Config
+
 func main() {
+	conf = initConfig()
+
 	m = initMacaron()
 
-	m.Get("/", homeView)
+	m.Get("/", pageView)
+	m.Get("/:page", pageView)
 
-	m.Run()
+	m.Run("0.0.0.0", 5000)
 }

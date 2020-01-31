@@ -4,6 +4,14 @@ import (
 	macaron "gopkg.in/macaron.v1"
 )
 
-func homeView(ctx *macaron.Context) {
-	ctx.HTML(200, "home")
+func pageView(ctx *macaron.Context) {
+	var page string
+
+	if page = ctx.Params(":page"); page == "" {
+		page = "home"
+		ctx.HTML(200, page, map[string]interface{}{"Page": page}, macaron.HTMLOptions{Layout: "layout_home"})
+		return
+	}
+
+	ctx.HTML(200, page, map[string]interface{}{"Page": page})
 }
