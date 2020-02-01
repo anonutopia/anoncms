@@ -19,3 +19,7 @@ func pageView(ctx *macaron.Context) {
 
 	ctx.HTML(200, page, map[string]interface{}{"Page": page})
 }
+
+func generateView(ctx *macaron.Context) {
+	crawl("http://0.0.0.0:5000")
+}

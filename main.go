@@ -14,6 +14,7 @@ func main() {
 	m = initMacaron()
 
 	m.Get("/", pageView)
+	m.Get("/generate", generateView)
 	m.Get("/:page", pageView)
 
 	m.Run("0.0.0.0", 5000)
