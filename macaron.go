@@ -25,11 +25,11 @@ func initMacaron() *macaron.Macaron {
 
 			},
 		}},
-		Directory: fmt.Sprintf("themes/%s/html", conf.Theme),
+		Directory: "content",
 	}
 
 	s := macaron.Static(
-		fmt.Sprintf("themes/%s/static", conf.Theme),
+		fmt.Sprintf("content/theme/static", conf.Theme),
 		macaron.StaticOptions{
 			Prefix:      "static",
 			SkipLogging: true,

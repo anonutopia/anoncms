@@ -34,7 +34,7 @@ func crawl(url string) {
 			f, _ := os.Create(fmt.Sprintf("docs/%s.html", link))
 			// fmt.Println(string(r.Body))
 			f.Write(r.Body)
-			copyDir(fmt.Sprintf("themes/%s/static", conf.Theme), "docs/static")
+			copyDir(fmt.Sprintf("content/%s/static", conf.Theme), "docs/static")
 		})
 		c.Visit(fmt.Sprintf("http://0.0.0.0:5000%s", link))
 	}
