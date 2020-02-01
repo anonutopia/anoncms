@@ -31,10 +31,10 @@ func crawl(url string) {
 			if link == "/" {
 				link = "index"
 			}
-			f, _ := os.Create(fmt.Sprintf("www.anontaxi.com/%s.html", link))
+			f, _ := os.Create(fmt.Sprintf("docs/%s.html", link))
 			// fmt.Println(string(r.Body))
 			f.Write(r.Body)
-			copyDir(fmt.Sprintf("themes/%s/static", conf.Theme), "www.anontaxi.com/static")
+			copyDir(fmt.Sprintf("themes/%s/static", conf.Theme), "docs/static")
 		})
 		c.Visit(fmt.Sprintf("http://0.0.0.0:5000%s", link))
 	}
