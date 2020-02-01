@@ -9,7 +9,11 @@ func pageView(ctx *macaron.Context) {
 
 	if page = ctx.Params(":page"); page == "" {
 		page = "home"
-		ctx.HTML(200, page, map[string]interface{}{"Page": page}, macaron.HTMLOptions{Layout: "layout_home"})
+		ctx.HTML(
+			200,
+			page,
+			map[string]interface{}{"Page": page},
+			macaron.HTMLOptions{Layout: "layout_home"})
 		return
 	}
 

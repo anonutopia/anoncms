@@ -25,46 +25,30 @@
 
 <body>
 
-    <!-- Header -->
     <header>
-        <!-- Background Image -->
         <div class="bg-img" style="background-image: url('./static/img/background13.jpeg');">
             <div class="overlay"></div>
         </div>
-        <!-- /Background Image -->
 
-        <!-- Nav -->
         <nav id="nav" class="navbar">
             <div class="container">
-
                 <div class="navbar-header">
-                    <!-- Logo -->
                     <div class="navbar-brand">
                         <a href="/">
                             <img class="logo" src="./static/img/logo.png" alt="logo">
                             <img class="logo-alt" src="./static/img/logo-alt.png" alt="logo">
                         </a>
                     </div>
-                    <!-- /Logo -->
-
-                    <!-- Collapse nav button -->
                     <div class="nav-collapse">
                         <span></span>
                     </div>
-                    <!-- /Collapse nav button -->
                 </div>
 
-                <ul class="main-nav nav navbar-nav navbar-right" id="main-nav">
-                    <li><a href="/">Naslovnica</a></li>
-                    <li><a href="/faq">Česta pitanja</a></li>
-                    <li><a href="/ukljuci-se">Uključi se!</a></li>
-                </ul>
+                {{template "main_menu" .}}
 
             </div>
         </nav>
-        <!-- /Nav -->
 
-        <!-- header wrapper -->
         <div class="header-wrapper sm-padding bg-dark">
             <div class="container">
                 <h2>Česta pitanja</h2>
@@ -74,32 +58,18 @@
                 </ul>
             </div>
         </div>
-        <!-- /header wrapper -->
-
     </header>
-    <!-- /Header -->
 
     <div class="section md-padding">
-
-        <!-- Container -->
         <div class="container">
-
-            <!-- Row -->
             <div class="row">
-
-                <!-- Main -->
                 <main id="main" class="col-md-9">
 
                     {{ yield }}
 
                 </main>
-                <!-- /Main -->
 
-
-                <!-- Aside -->
                 <aside id="aside" class="col-md-3 hidden-sm-down">
-
-                    <!-- Category -->
                     <div class="widget">
                         <h3 class="title">Menu</h3>
                         <div class="widget-category">
@@ -108,63 +78,33 @@
                             <a href="/ukljuci-se" style="color: #E42D20;"><strong>Uključi se odmah!</strong></a>
                         </div>
                     </div>
-                    <!-- /Category -->
-
                 </aside>
-                <!-- /Aside -->
-
             </div>
-            <!-- /Row -->
-
         </div>
-        <!-- /Container -->
-
     </div>
 
-
-    <!-- Footer -->
     <footer id="footer" class="sm-padding bg-dark">
-
-        <!-- Container -->
         <div class="container">
-
-            <!-- Row -->
             <div class="row">
-
                 <div class="col-md-12">
-
-                    <!-- footer logo -->
                     <div class="footer-logo">
                         <a href="/"><img src="./static/img/logo-alt.png" alt="logo"></a>
                     </div>
-                    <!-- /footer logo -->
-
                     <ul class="footer-follow">
                         <li><a href="https://t.me/anonutopia" target="_blank"><i class="fa fa-telegram"></i></a></li>
 						<li><a href="https://www.facebook.com/AnonTaxi" target="_blank"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://github.com/anonutopia/anonutopians/blob/master/anontaxi.md" target="_blank"><i class="fa fa-github"></i></a></li>
 					</ul>
-
                     <div class="footer-copyright">
                         <p>Copyright &copy; 2020 <a href="/">AnonTaxi</a>.</p>
                     </div>
-
                 </div>
-
             </div>
-            <!-- /Row -->
-
         </div>
-        <!-- /Container -->
-
     </footer>
-    <!-- /Footer -->
 
-    <!-- Back to top -->
     <div id="back-to-top"></div>
-    <!-- /Back to top -->
 
-    <!-- Preloader -->
     <div id="preloader">
         <div class="preloader">
             <span></span>
@@ -173,7 +113,6 @@
             <span></span>
         </div>
     </div>
-    <!-- /Preloader -->
 
     <script type="text/javascript" src="./static/js/jquery.min.js"></script>
     <script type="text/javascript" src="./static/js/bootstrap.min.js"></script>
