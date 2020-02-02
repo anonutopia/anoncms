@@ -25,7 +25,7 @@ func crawl(url string) {
 
 	c.Visit("http://0.0.0.0:5000")
 
-	for link, _ := range links {
+	for link := range links {
 		c := colly.NewCollector()
 		c.OnResponse(func(r *colly.Response) {
 			if link == "/" {
@@ -34,7 +34,7 @@ func crawl(url string) {
 			f, _ := os.Create(fmt.Sprintf("docs/%s.html", link))
 			// fmt.Println(string(r.Body))
 			f.Write(r.Body)
-			copyDir(fmt.Sprintf("content/%s/static", conf.Theme), "docs/static")
+			copyDir("content/theme/static", "docs/static")
 		})
 		c.Visit(fmt.Sprintf("http://0.0.0.0:5000%s", link))
 	}

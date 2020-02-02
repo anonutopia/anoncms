@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"strings"
 	"time"
@@ -29,7 +28,7 @@ func initMacaron() *macaron.Macaron {
 	}
 
 	s := macaron.Static(
-		fmt.Sprintf("content/theme/static", conf.Theme),
+		"content/theme/static",
 		macaron.StaticOptions{
 			Prefix:      "static",
 			SkipLogging: true,
